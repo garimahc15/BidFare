@@ -1,0 +1,66 @@
+ONLINE BIDDING SYSTEM - PHP
+** THANKS TO Fritz Segotier **
+
+**ADMIN's LOGIN DETAIL**  (localhost/OnlineBiddingSystem/administrator)
+
+Username : admin
+Password : admin
+
+**USER LOGIN DETAILS**
+
+Username : harry
+Password : codeprojects
+
+Username : codeprojects
+Password : codeprojects
+
+OR SIMPLY YOU CAN REGISTER
+** NOTE: After Registration, the account needs to get activated. For that Open the Database File, Go to Member Table, 
+Look for your 'userid' row and check 'Verification' row. Set the value from 'no' to 'yes'
+
+DON'T FORGET TO CREATE A DATABASE NAMING "biddingsystemdb" AND IMPORT THE SQL FILE.
+WITHOUT THE DATABASE THE PROJECT WON'T RUN.
+
+>>The Database File is inside "DATABASE" folder.
+
+
+***** IF YOU FIND ANY ERRORS OR ANY PROBLEMS RELATED THIS PROGRAM, FEEL FREE TO CONTACT US *****  
+
+
+***** LEAVE A COMMENT IF YOU LOVED OUR WORK *****
+
+
+***** FOR MORE PROJECTS :- https://code-projects.org/ *****
+
+
+
+#THANK YOU FOR DOWNLOADING
+
+things left:
+change category pictures in products section : DONE
+change domain name and titles of html page and database name to bidfare : DONE
+bidfare logo   : DONE
+manual due date based on input. in add_prodven.php : DONE
+admin can remove any product on auction : DONE
+admin can "mark as read" notifications : DONE!!! :)))
+users can put up a product for auction  : CANCEL  (mention in ppt and upar upar se in demo video)
+update about us page in contact.php  : DONE
+
+account activation procedure!   : DONE  !!!!!!!!!!!! :)))))
+"activate account" option visible only if account is notactive.   : DONE
+Write sendemail.php which should be called on clicking "activate account".  :DONE
+{note: sendemail.php is linked to functions.php}
+setting up PHPmailer folder! (From github) : DONE
+
+can Remove ppactivate.php?
+
+use md5 hashing (php feature) to store password in database (PASSWORD encryption) : DONE
+steps followed:
+-> stored md5(pswd) in login.php 
+matching md5(entered pswd while login) with pswd in database (which also was stored encrypted while registration)
+
+
+change mysql codes as per PHP 8 : DONE
+
+then go to viewended.php to add onclick event on remove notice picture, onclick event = write sql query to delete that product from database : DONE
+OPTIONAL-> in above fix, show a pop up dialog box of successful deletion on deletion of item instead of blank webpage  : DONE
