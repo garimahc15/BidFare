@@ -3,7 +3,6 @@
 	require("functions.php");
 	require("db.php");
 	require("htmls.php");
-	require("timekuni.php");
 	headhtml();
 	$duedate = "2011-10-11 00:00:00";
 ?>

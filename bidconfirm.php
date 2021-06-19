@@ -50,13 +50,35 @@
 		$user = mysqli_fetch_array($query2);
 		$biddername = $user['memberid'];
 		$prodname = $prod['prodname'];
-		if($bidamount > $high){
-		mysqli_query($conn, "INSERT INTO bidreport(productid,bidder,biddatetime,bidamount,status) VALUES ('$id','$biddername',now(),'$bidamount',0)");
-		echo "Congratulations ".$_SESSION['user']."! You are the highest bidder for Item ".$prodname."<br /><br /><a href='details.php?id=".$id."'>Back</a>";
+
+		$semaphore_key = 434;
 		
 		
-		}elseif($bidamount <= $high){
-			echo "Your Bid is not counted for the amount is lower than the highest bid or does not exceed the starting bid<br /><br /><a href=details.php?id=".$id.">Back</a>";
+		if ( !function_exists('sem_get') ) {
+    			function sem_get($key) { return fopen(__FILE__.'.sem.'.$key, 'w+'); }
+    			function sem_acquire($semaphore) { return flock($semaphore, LOCK_EX); }
+    			function sem_release($semaphore) { return flock($semaphore, LOCK_UN); }
+		}
+
+		$semaphore = sem_get($semaphore_key);
+		if(!$semaphore)
+		{
+			echo "Failed to get semaphore - sem_get().\n";
+		}
+		
+
+		if (sem_acquire($semaphore, false))
+		{
+		
+			if($bidamount > $high){
+				mysqli_query($conn, "INSERT INTO bidreport(productid,bidder,biddatetime,bidamount,status) VALUES ('$id','$biddername',now(),'$bidamount',0)");
+				echo "Congratulations ".$_SESSION['user']."! You are the highest bidder for Item ".$prodname."<br /><br /><a href='details.php?id=".$id."'>Back</a>";
+		
+		
+			}elseif($bidamount <= $high){
+				echo "Your Bid is not counted for the amount is lower than the highest bid or does not exceed the starting bid<br /><br /><a href=details.php?id=".$id.">Back</a>";
+			}
+			sem_release($semaphore);
 		}
 	}
 	

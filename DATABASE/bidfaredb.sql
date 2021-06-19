@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `biddingsystemdb`
+-- Database: `bidfaredb`
 --
 
 -- --------------------------------------------------------
@@ -267,29 +267,20 @@ CREATE TABLE IF NOT EXISTS `member` (
   `firstname` varchar(30) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `userid` varchar(20) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(36) NOT NULL,
   `email` varchar(30) NOT NULL,
   `contactno` int(11) NOT NULL,
   `birthdate` varchar(30) NOT NULL,
   `address` varchar(60) NOT NULL,
   `verification` varchar(5) NOT NULL,
-  `memberimg` varchar(100) NOT NULL
+  `memberimg` varchar(100) NOT NULL, 
+  'email_verification_link' varchar(125)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`memberid`, `lastname`, `firstname`, `gender`, `userid`, `password`, `email`, `contactno`, `birthdate`, `address`, `verification`, `memberimg`) VALUES
-(1, 'uuhghfg', 'f', '', 'frrrr', 'ffff', 'fretx@yahoo.co', 66767, 'Date Month Year', 'City 86867', 'yes', 'default.jpg'),
-(2, 'hhhh', 'hhhhh', '', 'ttt', 'ttt', 'ghyhhff@yahoo.com', 444322, ' Month ?', 'Bacolod hhhhhh', '', 'default.jpg'),
-(16, 'Segotier', 'Fretz "Pnoid"', 'Male', 'mr.scarecrow011', '', 'naruto16_fanatic@yahoo.com', 2147483647, '10 January 1993', 'Bacolod Brgy. XX', 'yes', '305434_2063556988210_1223296885_31905736_1121941913_n.jpg'),
-(17, 'Eunice Alyana', 'Bautista', 'Female', 'EuniceAlyanaSexy', 'eunice', 'eunicegwapa@yahoo.com', 124444444, '1 January 1997', 'Silay sa higad sg suba pakadto sa iban nga balay', '0', 'default.jpg'),
-(18, 'Charmin', 'Lopez', 'Female', 'charminkuia', 'qwerty', 'charmin@yahoo.com', 123678, '1 January 1990', 'Silay Kung diin si Eunice nag talang', '0', 'default.jpg'),
-(19, 'asdfasdfdddd', 'asdfsdf', 'Female', '1111', 'ffffff', 'asdfasd@yahoo.com', 76888, '3 Month 1998', 'Bacolod wq342434', '0', 'default.jpg'),
-(20, 'dddddddddddddd', 'asdffffff', 'Male', 'asdfkkkkkk', 'qwerty', 'asdfasdfsadfsadf@yahoo.com', 980890, 'Date Month Year', 'Bacolod dfdfdf', 'yes', 'default.jpg'),
-(21, 'Harry', 'Den', 'Male', 'harry', 'codeprojects', 'harryden@ourmail.com', 2147483647, '5 August 1996', 'Silay Demo', 'yes', 'default.jpg'),
-(24, 'code', 'projects', 'Male', 'codeprojects', 'codeprojects', 'codeprojectsorg@gmail.com', 2147483647, '10 October 1996', 'Bacolod demo', 'yes', 'default.jpg');
 
 -- --------------------------------------------------------
 
